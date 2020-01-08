@@ -1,0 +1,17 @@
+browser->server : HTTP GET https://fullstack-exampleapp.herokuapp.com/spa
+server-->browser: HTTP STATUS 200 HTML code
+browser->server : HTTP GET Request URL: https://fullstack-exampleapp.herokuapp.com/main.css
+server-->browser: HTTP STATUS 200 main.css
+browser->server : HTTP GET Request URL: https://fullstack-exampleapp.herokuapp.com/spa.js
+server-->browser : STATUS 200 spa.js
+note over browser
+Browser run spa.js script 
+and request data.json object from server
+end note 
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/data.json
+server-->browser : HTTP STATUS 200 [{"content":"HTML is easy","date":"2019-05-23T17:30:31.098Z"},...]
+note over browser
+Browser get JSON Object from Server 
+parse and assign data FROM JSON Oobject to notes variable
+and render Notes by calling redrawNotes() function in spa.js script
+end note 

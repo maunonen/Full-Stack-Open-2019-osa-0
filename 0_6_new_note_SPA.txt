@@ -1,0 +1,13 @@
+note over browser
+At the first time, when page is 
+loaded an event handler is 
+registered for a form submit event.
+When user click save button 
+a several action are accured: 
+new note is added to the notes Array, 
+redrawNotes() render the list of notes,
+sendToServer(note) send POST request 
+to /new_note_spa with new note
+end note 
+browser->server : HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note_spa
+server-->browser : STATUS 201 {"message":"note created"}
